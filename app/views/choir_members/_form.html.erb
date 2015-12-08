@@ -1,4 +1,4 @@
-<%= form_for(@choir_member) do |f| %>
+<%= form_tag new_user_choir_choir_member_path(current_user, current_choir) do |f| %>
   <% if @choir_member.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@choir_member.errors.count, "error") %> prohibited this choir_member from being saved:</h2>
@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <%= label_tag :first_name %><br>
+    <%= text_field_tag :first_name %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+    <%= label_tag :last_name %><br>
+    <%= text_field_tag :last_name %>
   </div>
   <div class="field">
-    <%= f.label :voice %><br>
-    <%= f.text_field :voice %>
+    <%= label_tag :voice %><br>
+    <%= text_field_tag :voice %>
   </div>
   <div class="field">
-    <%= f.label :side %><br>
-    <%= f.text_field :side %>
+    <%= label_tag :side %><br>
+    <%= text_field_tag :side %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag "Create" %>
   </div>
 <% end %>
