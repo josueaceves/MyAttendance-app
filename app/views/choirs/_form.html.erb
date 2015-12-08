@@ -1,0 +1,25 @@
+<%= form_for(@choir) do |f| %>
+  <% if @choir.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@choir.errors.count, "error") %> prohibited this choir from being saved:</h2>
+
+      <ul>
+      <% @choir.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :choir_name %><br>
+    <%= f.text_field :choir_name %>
+  </div>
+  <div class="field">
+    <%= f.label :choir_location %><br>
+    <%= f.text_field :choir_location %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Choir name:</strong>
+  <%= @choir.choir_name %>
+</p>
+
+<p>
+  <strong>Choir location:</strong>
+  <%= @choir.choir_location %>
+</p>
+
+<%= link_to 'Edit', edit_choir_path(@choir) %> |
+<%= link_to 'Back', choirs_path %>
