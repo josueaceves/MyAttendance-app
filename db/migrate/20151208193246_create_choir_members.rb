@@ -5,6 +5,7 @@ class CreateChoirMembers < ActiveRecord::Migration
       t.string :last_name
       t.string :voice
       t.string :side
+      t.integer :choir_id
 
       t.timestamps null: false
     end
