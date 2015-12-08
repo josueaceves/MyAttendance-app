@@ -1,0 +1,2 @@
+module ChoirMembersHelper
+end
