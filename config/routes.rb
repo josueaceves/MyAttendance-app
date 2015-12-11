@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+
+  root 'landings#landing_index'
+  # get '/' => 'landings#landing_index'
+
   resources :users do
     resources :choirs do
       resources :choir_members
     end
   end
-  get '/' => 'landings#landing_index'
+
   get '/sessions/new' => 'sessions#new'
   post '/sessions' => 'sessions#create'
   delete '/sessions' => 'sessions#delete'
