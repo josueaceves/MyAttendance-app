@@ -1,25 +1,15 @@
 <p id="notice"><%= notice %></p>
+
 <div class="large-6 large-centered columns">
-
-
-    <div class="row">
-        <div class="small-9  choir-member-index ">
-          Fist Name | Last Name | Voice | side </div>
-      </div>
-
+  <div class="row" >
+    <h2 class="choir-member-index-header">Members</h2>
     <% @choir_members.each do |choir_member| %>
       <div class="row">
         <div class="small-9  choir-member-index ">
-          <%= choir_member.first_name %> | <%= choir_member.last_name %> | <%= choir_member.voice %> | <%= choir_member.side %> </div>
-
+          <%= choir_member.first_name %> <%= choir_member.last_name %> | <%= choir_member.voice %>
+        </div>
       </div>
-
-
-
     <% end %>
-
-
-
+  </div>
 </div>
 
-<%= link_to 'New Choir member', new_user_choir_choir_member_path(1,1) %>
