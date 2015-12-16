@@ -4,7 +4,6 @@
   margin: .5em;
   padding: .3em;
   padding-top: 10px;
-  /*text-align: center;*/
   border-radius: 5px;
   color:  #10A7E5;
   height: 3em;
@@ -12,9 +11,7 @@
 
 }
 
-/*.choir-attendance-index a {
-  border: solid white;
-}*/
+
 .choir-attendance-index-header {
   font-weight: bold;
   font-family: cursive;
@@ -48,12 +45,7 @@
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   color: #FE7040;
 }
-/*
-.attendance-options {
-  background-color: gray;
-  width: 30%
-}
-*/
+
 
 .att-option-div {
   background-color: #00A97A;
@@ -91,15 +83,45 @@
 
 
 
+.up-arrow {
+  width: 50%;
+  border-radius: 10px;
+  position: relative;
+  background: #10998F;
+  color: #FFF;
+  text-decoration: none;
+  padding: 20px;
+}
+
+.up-arrow:after {
+  content: '';
+  display: block;  
+  position: absolute;
+  left: 20px;
+  bottom: 100%;
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid #10998F;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
 
 
 
 
+#absent {
+  color: #D54A44;
+}
 
 
+#full-points {
+  color: #00A97A;
+}
 
-
-
+#late {
+  color:#D4B694 ;
+}
 
 
 
