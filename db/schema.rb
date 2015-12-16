@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208193246) do
+ActiveRecord::Schema.define(version: 20151214222415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attendances", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "choir_member_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "attendances", ["choir_member_id"], name: "index_attendances_on_choir_member_id", using: :btree
+  add_index "attendances", ["user_id"], name: "index_attendances_on_user_id", using: :btree
 
   create_table "choir_members", force: :cascade do |t|
     t.string   "first_name", null: false
@@ -43,4 +53,6 @@ ActiveRecord::Schema.define(version: 20151208193246) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "attendances", "choir_members"
+  add_foreign_key "attendances", "users"
 end
