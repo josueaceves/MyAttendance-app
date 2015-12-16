@@ -1,18 +1,14 @@
 
-<p id="notice"><%= notice %></p>
 <h2 class="choir-attendance-index-header">Members Attendance</h2>
-
-
 <% @choir_members.each do |choir_member| %>
 <div class="row">
-	<div class="small-5 small-centered columns">
-    <div class=" columns choir-attendance-index ">
+	<div class="small-9 small-centered columns">
+    <div class="columns choir-attendance-index">
      	<%= choir_member.first_name %> <%= choir_member.last_name %> 
-			<a class="att-option-div-absent" href=""><i class="fa fa-times fa-2x"></i></a>
-			<a class="att-option-div-late" href=""><i class="fa fa-clock-o fa-2x"></i></a>
-			<a class="att-option-div" href=""><i class="fa fa-check fa-2x"></i></a>
+			<a class="att-option-div-absent" href=""><i class="fa fa-times fa-lg"></i></a>
+			<a class="att-option-div-late" href=""><i class="fa fa-clock-o fa-lg"></i></a>
+			<a class="att-option-div" href=""><i class="fa fa-check fa-lg"></i></a>
     </div>
   </div>
 </div>
-
 <% end %>		

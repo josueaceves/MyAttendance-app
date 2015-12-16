@@ -21,7 +21,6 @@
 
 .attendance-button  {
   background-color: #DDDDDD;
-  /*float: right;*/
   margin-right: 2em;
   border-radius: 3px;
   box-shadow: 10px 10px 10px 5px #888888;
@@ -54,7 +53,7 @@
   padding: 5px;
   margin: 3px;
   border-radius: 10px;
-  width: 40px;
+  /*width: 30px;*/
   float: right;
   margin-top: -8px;
 }
@@ -65,7 +64,7 @@
   padding: 5px;
   margin: 3px;
   border-radius: 10px;
-  width: 40px;
+  /*width: 30px;*/
   float: right;
   margin-top: -8px;
 }
@@ -77,7 +76,7 @@
   padding: 5px;
   margin: 3px;
   border-radius: 10px;
-  width: 40px;
+  /*width: 30px;*/
   float: right;
   margin-top: -8px;
 }
