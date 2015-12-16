@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -13,8 +14,31 @@
   </head>
 
   <body>
+  <div class="contain to grid">
+  <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/"><%= image_tag("logo.png") %></a></h1>
+        </li>
+    <section class="top-bar-section">
+      <ul class="right index-nav-ul">
+        <% if logged_in? %>
+          <li class="has-form"><%= link_to "Home",root_path, class: "button" %></li>
+          <li class="has-form"><%=  link_to "Log Out",sessions_path, method: "delete", class: "button" %></li>
+        <% else %>
+          <li class="has-form"><%= link_to "Sign Up",new_user_path, class: "button" %></li>
+          <li class="has-form"><%=  link_to "Contanct Us",new_user_path, class: "button" %></li>
+        <% end %>
+      </ul>
+    </section>
+  </nav>
+</div>
 
-    <%= yield %>
 
+
+
+    <div class="row  layout-yield">
+      <%= yield %>
+    </div>
   </body>
 </html>

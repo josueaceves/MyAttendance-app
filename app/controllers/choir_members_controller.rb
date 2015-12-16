@@ -4,7 +4,7 @@ class ChoirMembersController < ApplicationController
   # GET /choir_members
   # GET /choir_members.json
   def index
-    @choir_members = ChoirMember.all
+    @choir_members = ChoirMember.all.sort_by{ |user| user.first_name}
   end
 
   # GET /choir_members/1
