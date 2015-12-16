@@ -13,26 +13,29 @@
 		     	<%= choir_member.first_name %> <%= choir_member.last_name %> 
         </div>
       </div>
-	      <div id="<%=choir_member.id%>" class="hidden">
+	      <div id="<%=choir_member.id%>" class="hidden up-arrow">
 	      <div class="row">
-	      	<div class="small-6 columns">
+	      	<div class="small-6 columns" id="full-points">
 	      		<div class="att-option-div">
 	      			<a href=""><i class="fa fa-check fa-2x"></i></a>
 	      		</div>
+	      		 &nbsp;Full Points
 	      	</div>
 	      </div>
 	      <div class="row">
-	      	<div class="small-6 columns">
+	      	<div id="late" class="small-6 columns">
 	      		<div class="att-option-div-late">
 	      			<a href=""><i class="fa fa-clock-o fa-2x"></i></a>
 	      		</div>
+	      		 &nbsp;Late
 	      	</div>
 	      </div>
 	      <div class="row">
-	      	<div class="small-6 columns">
+	      	<div id="absent" class="small-6 columns">
 	      		<div class="att-option-div-absent">
 	      			<a href=""><i class="fa fa-times fa-2x"></i></a>
 	      		</div>
+	      		 &nbsp;Absent
 	      	</div>
 	      </div>
       </div>
