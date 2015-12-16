@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
-
-<div class="medium-7 medium-centered columns">
-  <span></span>
-  <% @choirs.each do |choir| %>
-
-    <p>Choir Name: <%= link_to choir.choir_name, user_choir_choir_members_path(current_user, choir) %> <span>Take Attendance</span></p>
-  <% end %>
+<h2 class="choir-list-index-header">List Of Choirs</h2>
+<div class="row">
+	<div class="medium-5 medium-centered columns  columns choir-list-index">
+	  <% @choirs.each do |choir| %>
+	    Choir Name: <%= link_to choir.choir_name, user_choir_choir_members_path(current_user, choir) %>
+	  <% end %>
+	</div>
 </div>
 
 

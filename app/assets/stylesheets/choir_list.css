@@ -1,0 +1,19 @@
+.choir-list-index {
+  background-color: #E7E7E7;
+  font-family:Verdana, Geneva, sans-serif;
+  margin: .5em;
+  padding: .3em;
+  padding-top: 10px;
+  border-radius: 5px;
+  color:  #10A7E5;
+  height: 3em;
+
+}
+
+.choir-list-index-header {
+  text-align: center;
+  font-weight: bold;
+  font-family: cursive;
+  color: #10998F;
+}
+

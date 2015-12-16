@@ -1,44 +1,14 @@
 
-<p id="notice"><%= notice %></p>
-
-<div class="large-6 large-centered columns">
-  <div class="row" >
-    <h2 class="choir-attendance-index-header">Members Attendance</h2>
-    <% @choir_members.each do |choir_member| %>
-      <div class="row">
-        <div class="small-9  columns choir-attendance-index ">
-        	<div class=" small-1 columns att-list-button">
-        			<a href="<%= choir_member.id %>"><i  style="color: #FE7040; margin-left: -5px; "class="fa fa-caret-down fa-2x"></i></a>
-        	</div>
-		     	<%= choir_member.first_name %> <%= choir_member.last_name %> 
-        </div>
-      </div>
-	      <div id="<%=choir_member.id%>" class="hidden up-arrow">
-	      <div class="row">
-	      	<div class="small-6 columns" id="full-points">
-	      		<div class="att-option-div">
-	      			<a href=""><i class="fa fa-check fa-2x"></i></a>
-	      		</div>
-	      		 &nbsp;Full Points
-	      	</div>
-	      </div>
-	      <div class="row">
-	      	<div id="late" class="small-6 columns">
-	      		<div class="att-option-div-late">
-	      			<a href=""><i class="fa fa-clock-o fa-2x"></i></a>
-	      		</div>
-	      		 &nbsp;Late
-	      	</div>
-	      </div>
-	      <div class="row">
-	      	<div id="absent" class="small-6 columns">
-	      		<div class="att-option-div-absent">
-	      			<a href=""><i class="fa fa-times fa-2x"></i></a>
-	      		</div>
-	      		 &nbsp;Absent
-	      	</div>
-	      </div>
-      </div>
-    <% end %>
+<h2 class="choir-attendance-index-header">Members Attendance</h2>
+<% @choir_members.each do |choir_member| %>
+<div class="row">
+	<div class="small-9 small-centered columns">
+    <div class="columns choir-attendance-index">
+     	<%= choir_member.first_name %> <%= choir_member.last_name %> 
+			<a class="att-option-div-absent" href=""><i class="fa fa-times fa-lg"></i></a>
+			<a class="att-option-div-late" href=""><i class="fa fa-clock-o fa-lg"></i></a>
+			<a class="att-option-div" href=""><i class="fa fa-check fa-lg"></i></a>
+    </div>
   </div>
 </div>
+<% end %>		

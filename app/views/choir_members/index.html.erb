@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
   <div class="small-3 columns attendance-button" align="right">
-    <h3><%= link_to "Take Attendance",  attendances_list_path %></h3>
+    <h3><%= link_to "Attendance",  attendances_list_path %></h3>
   </div>
 </div>
 <div class="large-6 large-centered columns">
@@ -10,7 +10,7 @@
     <% @choir_members.each do |choir_member| %>
       <div class="row">
         <div class="small-9  choir-member-index ">
-          <%= choir_member.first_name %> <%= choir_member.last_name %> | <%= choir_member.voice %>
+          <a href="/users/<%= current_user.id %>/choirs/<%= @choir.id%>/choir_members/<%= choir_member.id%>"><%= choir_member.first_name %> <%= choir_member.last_name %> | <%= choir_member.voice %></a>
         </div>
       </div>
     <% end %>
