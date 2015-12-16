@@ -7,12 +7,13 @@
   border-radius: 5px;
   color:  #10A7E5;
   height: 3em;
-  width: 90%;
+  width: 100%;
 
 }
 
 
 .choir-attendance-index-header {
+  text-align: center;
   font-weight: bold;
   font-family: cursive;
   color: #FE7040;
@@ -20,7 +21,7 @@
 
 .attendance-button  {
   background-color: #DDDDDD;
-  float: right;
+  /*float: right;*/
   margin-right: 2em;
   border-radius: 3px;
   box-shadow: 10px 10px 10px 5px #888888;
@@ -53,7 +54,9 @@
   padding: 5px;
   margin: 3px;
   border-radius: 10px;
-  width: 70px;
+  width: 40px;
+  float: right;
+  margin-top: -8px;
 }
 
 .att-option-div-late {
@@ -62,7 +65,9 @@
   padding: 5px;
   margin: 3px;
   border-radius: 10px;
-  width: 70px;
+  width: 40px;
+  float: right;
+  margin-top: -8px;
 }
 
 
@@ -72,57 +77,10 @@
   padding: 5px;
   margin: 3px;
   border-radius: 10px;
-  width: 70px;
+  width: 40px;
+  float: right;
+  margin-top: -8px;
 }
-
-.hidden {
-  display: none;
-}
-
-
-
-
-
-.up-arrow {
-  width: 50%;
-  border-radius: 10px;
-  position: relative;
-  background: #10998F;
-  color: #FFF;
-  text-decoration: none;
-  padding: 20px;
-}
-
-.up-arrow:after {
-  content: '';
-  display: block;  
-  position: absolute;
-  left: 20px;
-  bottom: 100%;
-  width: 0;
-  height: 0;
-  border-bottom: 10px solid #10998F;
-  border-top: 10px solid transparent;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-}
-
-
-
-
-#absent {
-  color: #D54A44;
-}
-
-
-#full-points {
-  color: #00A97A;
-}
-
-#late {
-  color:#D4B694 ;
-}
-
 
 
 
