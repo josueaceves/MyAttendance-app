@@ -1,0 +1,25 @@
+
+<p id="notice"><%= notice %></p>
+
+<div class="large-6 large-centered columns">
+  <div class="row" >
+    <h2 class="choir-attendance-index-header">Members Attendance</h2>
+    <% @choir_members.each do |choir_member| %>
+      <div class="row">
+        <div class="small-9  columns choir-attendance-index ">
+          <div><%= choir_member.first_name %> <%= choir_member.last_name %> 
+
+          	<div class=" small-1 columns att-list-button">
+          		<!-- <div class="test"> -->
+          			<!-- <p class="att-drop-down "> -->
+          				<a href="#"><i  style="color: #FE7040; margin-left: -5px; "class="fa fa-caret-down fa-2x"></i></a>
+          			<!-- </p> -->
+          		<!-- </div> -->
+          	</div>
+
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
