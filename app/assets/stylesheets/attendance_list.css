@@ -34,8 +34,8 @@
 
 .att-list-button {
   background-color: rgba(59, 174, 22, 0.7);
-  margin-right: 1em;
-  border-radius:5px;
+  margin-right: 2em;
+  border-radius:2px;
   height: 30px;
   padding-bottom: 0;
   border: solid thin rgba(59, 174, 22, 0.7);
@@ -48,13 +48,59 @@
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   color: #FE7040;
 }
+/*
+.attendance-options {
+  background-color: gray;
+  width: 30%
+}
+*/
 
-
-
-.test {
-  border-right: gray thin solid;
-
+.att-option-div {
+  background-color: #00A97A;
+  color: #0F664D  !important;
+  padding: 5px;
+  margin: 3px;
+  border-radius: 10px;
+  width: 70px;
 }
 
-.att-drop-down {
+.att-option-div-late {
+  background-color: #D4B694;
+  color: #6F5639  !important;
+  padding: 5px;
+  margin: 3px;
+  border-radius: 10px;
+  width: 70px;
 }
+
+
+.att-option-div-absent {
+  background-color: #D54A44;
+  color: #90332D !important;
+  padding: 5px;
+  margin: 3px;
+  border-radius: 10px;
+  width: 70px;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
