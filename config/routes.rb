@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'landings#landing_index'
+  # root 'landings#landing_index'
+  root 'drinks#index'
   resources :users do
     resources :choirs do
       resources :choir_members do 
