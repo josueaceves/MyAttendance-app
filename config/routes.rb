@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   delete '/sessions' => 'sessions#delete'
 
-  get '/attendances/list' => 'attendances#list'
+  # get '/attendances/list' => 'attendances#list'
+  get '/attendances/lists/:choir_id/new' => 'attendances#list'
+  # post '/attendances/lists/:choir_id' => 'attendances#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

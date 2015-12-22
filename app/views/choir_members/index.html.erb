@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
   <div class="small-3 columns attendance-button" align="right">
-    <h3><%= link_to "Attendance",  attendances_list_path %></h3>
+    <h3><%= link_to "Attendance","/attendances/lists/#{@choir.id}/new" %></h3>
   </div>
 </div>
 <div class="large-6 large-centered columns">

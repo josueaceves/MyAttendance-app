@@ -1,14 +1,14 @@
 
 <h2 class="choir-attendance-index-header">Members Attendance</h2>
 <% @choir_members.each do |choir_member| %>
-<div class="row">
-	<div class="small-9 small-centered columns">
-    <div class="columns choir-attendance-index">
-     	<%= choir_member.first_name %> <%= choir_member.last_name %> 
-			<a class="att-option-div-absent" href=""><i class="fa fa-times fa-lg"></i></a>
-			<a class="att-option-div-late" href=""><i class="fa fa-clock-o fa-lg"></i></a>
-			<a class="att-option-div" href=""><i class="fa fa-check fa-lg"></i></a>
-    </div>
-  </div>
-</div>
+	<div class="row" id="<%= choir_member.id%>">
+		<div class="small-6 small-centered columns">
+	    <div class="columns choir-attendance-index">
+	     	<%= choir_member.first_name %> <%= choir_member.last_name %> 
+			<a  id="<%= choir_member.id%>" class="att-option-div-absent" href="/users/<%= current_user.id %>/choirs/<%= @choir.id %>/choir_members/<%= choir_member.id %>/attendances"><i class="fa fa-times fa-lg"></i></a>
+			<a  id="<%= choir_member.id%>" class="att-option-div-late" href=" /users/<%= current_user.id %>/choirs/<%= @choir.id %>/choir_members/<%= choir_member.id %>/attendances"><i class="fa fa-clock-o fa-lg"></i></a>
+			<a id="<%= choir_member.id%>"  class="att-option-div" href=" /users/<%= current_user.id %>/choirs/<%= @choir.id %>/choir_members/<%= choir_member.id %>/attendances"><i class="fa fa-check fa-lg"></i></a>
+	    </div>
+	  </div>
+	</div>
 <% end %>		
