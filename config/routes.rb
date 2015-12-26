@@ -1,21 +1,46 @@
 Rails.application.routes.draw do
 
   root 'landings#landing_index'
-  # root 'drinks#index'
   resources :users do
     resources :choirs do
+      resources :attendances 
       resources :choir_members do 
-        resources :attendances
-      end
+        resources :attendees
+      end 
     end
   end
+
+
+  # resources :attendances do
+  #   resources :attendees
+  # end
+
+
+
+# concern :attendeeable do
+#   resources :attendees
+# end
+
+
+# resources :attendees, concerns: :attendeeable
+# resources :choir_members, concerns: :attendeeable
+
+
+# concern :attendanceable do
+#   resources :attendances
+# end
+
+# resources :attendances, concerns: :attendanceable
+# resources :choir_members, concerns: :attendanceable
+
+
+
 
   get '/sessions/new' => 'sessions#new'
   post '/sessions' => 'sessions#create'
   delete '/sessions' => 'sessions#delete'
 
-  # get '/attendances/list' => 'attendances#list'
-  get '/attendances/lists/:choir_id/new' => 'attendances#list'
+  # post '/attendances/lists/:choir_id/new' => 'attendances#list'
   # post '/attendances/lists/:choir_id' => 'attendances#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
