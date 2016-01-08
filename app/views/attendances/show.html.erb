@@ -6,13 +6,13 @@
 	     	<%= find_choir_member(choir_member_attendee.choir_member_id).first_name %> <%= find_choir_member(choir_member_attendee.choir_member_id).last_name %> 
 
 	    <% if choir_member_attendee.points == nil %>
-			<%= link_to "<i class='fa fa-times fa-lg'></i>".html_safe ,"/users/#{current_user.id}/choirs/#{@choir.id}/choir_member_attendees/#{choir_member_attendee.id}/attendees", class: "att-option-div-absent" , id: "#{choir_member_attendee.id}", method: "post" %>
+				<%= link_to "<i class='fa fa-times fa-lg'></i>".html_safe ,"/users/<%=current_user.id%>/choirs/<%=@choir.id%>/choir_member_attendees/<%=choir_member_attendee.id%>/attendees", class: "attendee-div att-option-div-absent" , id: "#{choir_member_attendee.id}", method: "put" %>
 
-			<%= link_to "<i class='fa fa-clock-o fa-lg'></i>".html_safe ,"/users/ #{current_user.id} /choirs/#{@choir.id}/choir_member_attendees/#{ choir_member_attendee.id }/attendances/ #{@attendance.id }/attendees", class: "att-option-div-late" , id: "#{choir_member_attendee.id}", method: "post" %>
+				<%= link_to "<i class='fa fa-clock-o fa-lg'></i>".html_safe ,"/users/ <%=current_user.id%> /choirs/<%=@choir.id%>/choir_member_attendees/<%= choir_member_attendee.id %>/attendances/ <%=@attendance.id %>/attendees", class: "attendee-div att-option-div-late" , id: "#{choir_member_attendee.id}", method: "put" %>
 
-			<%= link_to "<i class='fa fa-check fa-lg'></i></a>".html_safe ,"/users/ #{current_user.id} /choirs/#{@choir.id}/choir_member_attendees/#{ choir_member_attendee.id }/attendances/ #{@attendance.id }/attendees", class: "att-option-div" , id: "#{choir_member_attendee.id}", method: "post" %>
-			<%elsif choir_member_attendee.points == 1 %>
-			<i class='fa fa-times fa-lg'></i>
+				<%= link_to "<i class='fa fa-check fa-lg'></i></a>".html_safe ,"/users/ <%=current_user.id%> /choirs/<%=@choir.id%>/choir_member_attendees/<%= choir_member_attendee.id %>/attendances/ <%=@attendance.id %>/attendees", class: "attendee-div att-option-div" , id: "#{choir_member_attendee.id}", method: "put" %>
+			<%else%>
+				<%=member_marked_points(choir_member_attendee.points).html_safe%>
 			<%end%>
 	    </div>
 	  </div>
