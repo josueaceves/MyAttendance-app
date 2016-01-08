@@ -3,7 +3,7 @@
 	<div class="row" id="<%= choir_member_attendee.id%>">
 		<div class="small-6 small-centered columns">
 	    <div class="columns choir-attendance-index">
-	     	<%= ChoirMember.find_by(id: choir_member_attendee.choir_member_id).first_name %> <%= ChoirMember.find_by(id: choir_member_attendee.choir_member_id).last_name %> 
+	     	<%= find_choir_member(choir_member_attendee.choir_member_id).first_name %> <%= find_choir_member(choir_member_attendee.choir_member_id).last_name %> 
 
 	    <% if choir_member_attendee.points == nil %>
 			<%= link_to "<i class='fa fa-times fa-lg'></i>".html_safe ,"/users/#{current_user.id}/choirs/#{@choir.id}/choir_member_attendees/#{choir_member_attendee.id}/attendees", class: "att-option-div-absent" , id: "#{choir_member_attendee.id}", method: "post" %>
@@ -18,6 +18,3 @@
 	  </div>
 	</div>
 <% end %>		
-
-<!-- /users/ #{current_user.id} /choirs/#{@choir.id}/choir_members/#{ choir_member.id }/attendances/ #{@attendance.id }/attendees", class: "att-option-div
-/users/#{current_user.id} /choirs/#{@choir.id}/choir_members/#{ choir_member.id }/attendees/:id -->
