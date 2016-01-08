@@ -1,7 +1,17 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
-  <div class="small-3 columns attendance-button" align="right">
-    <h3><%= link_to "Attendance","/attendances/lists/#{@choir.id}/new" %></h3>
+
+  <div class="medium-2 columns attendance-button" align="right">
+    <h3><%= link_to "Previous Att", user_choir_attendances_path(current_user.id, @choir.id)%></h3>
+  </div>
+
+  <div class="medium-1 columns attendance-button" align="right">
+    <h3><%= link_to "5am","/users/#{current_user.id}/choirs/#{@choir.id}/attendances" , id: "5am", method: "post" %></h3>
+  </div>
+
+  <div class="medium-1 columns attendance-button" align="right">
+   
+    <h3> <%= link_to "6pm","/users/#{current_user.id}/choirs/#{@choir.id}/attendances", id: "6pm", method: "post" %></h3>
   </div>
 </div>
 <div class="large-6 large-centered columns">

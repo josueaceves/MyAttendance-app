@@ -1,27 +1,26 @@
 class AttendancesController < ApplicationController
 	respond_to :html, :js
-	def new
-		
-	end
 
-	def list
-		@choir = Choir.find_by(user_id: current_user.id)
-		@choir_members = @choir.choir_members.sort_by{ |user| user.first_name}
-	end
+  def index
+    @attendances = Choir.find_by(id: params[:choir_id]).attendances.sort_by{ |att| att.created_at}.reverse
+  end
 
-	def create
-		if request.xhr?
-      if params.first.first == "att-option-div-absent"
-      	puts params[:choir_member_id]
-      	@choir_member = ChoirMember.find_by(id: params[:choir_member_id])
-      	@choir_member.attendances.create(user_id:  params[:user_id], choir_id: params[:choir_id], points: 0 )
-      elsif params.first.first == "att-option-div-late"
-      	@choir_member = ChoirMember.find_by(id: params[:choir_member_id])
-      	@choir_member.attendances.create(user_id:  params[:user_id], choir_id: params[:choir_id], points: 1 )
-      elsif params.first.first == "att-option-div"
-      	@choir_member = ChoirMember.find_by(id: params[:choir_member_id])
-      	@choir_member.attendances.create(user_id:  params[:user_id], choir_id: params[:choir_id], points: 3 )
-      end
+
+
+  def create
+    @choir = Choir.find_by(user_id: current_user.id)
+    @attendance = @choir.attendances.create(prayer: params[:prayer]) 
+    @choir.choir_members.each do |member|
+      Attendee.create( attendance_id: @attendance.id, choir_member_id: member.id)
     end
-	end
+    redirect_to user_choir_attendance_path(params[:user_id], @choir.id, @attendance.id)
+  end
+
+
+  def show
+    @choir = Choir.find_by(user_id: params[:user_id])
+    @attendance = Attendance.find_by(id: params[:id])
+    @members_attendees = @attendance.attendees
+  end
+
 end
