@@ -1,0 +1,23 @@
+<h2 class="choir-attendance-index-header">Members Attendance</h2>
+<% @members_attendees.each do |choir_member_attendee| %>
+	<div class="row" id="<%= choir_member_attendee.id%>">
+		<div class="small-6 small-centered columns">
+	    <div class="columns choir-attendance-index">
+	     	<%= ChoirMember.find_by(id: choir_member_attendee.choir_member_id).first_name %> <%= ChoirMember.find_by(id: choir_member_attendee.choir_member_id).last_name %> 
+
+	    <% if choir_member_attendee.points == nil %>
+			<%= link_to "<i class='fa fa-times fa-lg'></i>".html_safe ,"/users/#{current_user.id}/choirs/#{@choir.id}/choir_member_attendees/#{choir_member_attendee.id}/attendees", class: "att-option-div-absent" , id: "#{choir_member_attendee.id}", method: "post" %>
+
+			<%= link_to "<i class='fa fa-clock-o fa-lg'></i>".html_safe ,"/users/ #{current_user.id} /choirs/#{@choir.id}/choir_member_attendees/#{ choir_member_attendee.id }/attendances/ #{@attendance.id }/attendees", class: "att-option-div-late" , id: "#{choir_member_attendee.id}", method: "post" %>
+
+			<%= link_to "<i class='fa fa-check fa-lg'></i></a>".html_safe ,"/users/ #{current_user.id} /choirs/#{@choir.id}/choir_member_attendees/#{ choir_member_attendee.id }/attendances/ #{@attendance.id }/attendees", class: "att-option-div" , id: "#{choir_member_attendee.id}", method: "post" %>
+			<%elsif choir_member_attendee.points == 1 %>
+			<i class='fa fa-times fa-lg'></i>
+			<%end%>
+	    </div>
+	  </div>
+	</div>
+<% end %>		
+
+<!-- /users/ #{current_user.id} /choirs/#{@choir.id}/choir_members/#{ choir_member.id }/attendances/ #{@attendance.id }/attendees", class: "att-option-div
+/users/#{current_user.id} /choirs/#{@choir.id}/choir_members/#{ choir_member.id }/attendees/:id -->

@@ -1,24 +1,26 @@
 class AttendancesController < ApplicationController
 	respond_to :html, :js
 
+  def index
+    @attendances = Choir.find_by(id: params[:choir_id]).attendances.sort_by{ |att| att.created_at}.reverse
+  end
 
-	def create
-    if request.xhr?
-      @attendance =  Choir.find_by(id: params[:choir_id]).attendances.create(prayer: params[:prayer])
-      p session[:attendance_id] = @atendace.id
-      @choir = Choir.find_by(user_id: current_user.id)
-      @choir_members = @choir.choir_members.sort_by{ |user| user.first_name}
-      render 'list', layout: false
-    else
-      puts " no ajax *******************"
-      puts " no ajax *******************"
-      
-      @attendance =  Choir.find_by(id: params[:choir_id]).attendances.create(prayer: params[:prayer])
-      puts " no ajax *******************"
-      p session[:attendance_id] = @attendance.id
-      @choir = Choir.find_by(user_id: current_user.id)
-      @choir_members = @choir.choir_members.sort_by{ |user| user.first_name}
+
+
+  def create
+    @choir = Choir.find_by(user_id: current_user.id)
+    @attendance = @choir.attendances.create(prayer: params[:prayer]) 
+    @choir.choir_members.each do |member|
+      Attendee.create( attendance_id: @attendance.id, choir_member_id: member.id)
     end
-	end
+    redirect_to user_choir_attendance_path(params[:user_id], @choir.id, @attendance.id)
+  end
+
+
+  def show
+    @choir = Choir.find_by(user_id: params[:user_id])
+    @attendance = Attendance.find_by(id: params[:id])
+    @members_attendees = @attendance.attendees
+  end
 
 end

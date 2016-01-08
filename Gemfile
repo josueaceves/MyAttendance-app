@@ -6,10 +6,10 @@ gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
   gem 'puma'
   gem 'pg'
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
+# group :production do
+#   gem 'pg'
+#   gem 'rails_12factor'
+# end
 
 gem 'faker'
 # Use SCSS for stylesheets

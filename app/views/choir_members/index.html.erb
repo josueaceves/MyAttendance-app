@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
 
+  <div class="medium-2 columns attendance-button" align="right">
+    <h3><%= link_to "Previous Att", user_choir_attendances_path(current_user.id, @choir.id)%></h3>
+  </div>
+
   <div class="medium-1 columns attendance-button" align="right">
-    <h3><%= link_to "5am","/users/#{current_user.id}/choirs/#{@choir.id}/attendances" , id: "5am", method: "post"%></h3>
+    <h3><%= link_to "5am","/users/#{current_user.id}/choirs/#{@choir.id}/attendances" , id: "5am", method: "post" %></h3>
   </div>
 
   <div class="medium-1 columns attendance-button" align="right">
