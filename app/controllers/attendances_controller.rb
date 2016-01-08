@@ -9,7 +9,7 @@ class AttendancesController < ApplicationController
 
   def create
     @choir = Choir.find_by(user_id: current_user.id)
-    @attendance = @choir.attendances.create(prayer: params[:prayer]) 
+    @attendance = @choir.attendances.create() 
     @choir.choir_members.each do |member|
       Attendee.create( attendance_id: @attendance.id, choir_member_id: member.id)
     end
