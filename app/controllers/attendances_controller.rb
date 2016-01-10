@@ -22,5 +22,4 @@ class AttendancesController < ApplicationController
     @attendance = Attendance.find_by(id: params[:id])
     @members_attendees = @attendance.attendees
   end
-
 end

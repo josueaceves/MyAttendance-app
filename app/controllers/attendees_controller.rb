@@ -1,10 +1,11 @@
 class AttendeesController < ApplicationController
 	respond_to :html, :js
-  def update
+
+  def edit
     if request.xhr?
       @attendee = Attendee.find_by(id: params[:id])
       @attendee.update(points: attendance_option(params[:type]))
-      render :json => {points: @attendee.points}
+      {points: @attendee.points}.to_json
     end
   end
 end

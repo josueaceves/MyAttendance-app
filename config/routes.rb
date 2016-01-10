@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'landings#landing_index'
+  
   resources :users do
     resources :choirs do
       resources :attendances 

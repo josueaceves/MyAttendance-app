@@ -6,11 +6,11 @@
 	     	<%= find_choir_member(choir_member_attendee.choir_member_id).first_name %> <%= find_choir_member(choir_member_attendee.choir_member_id).last_name %> 
 
 	    <% if choir_member_attendee.points == nil %>
-				<%= link_to "<i class='fa fa-times fa-lg'></i>".html_safe, user_choir_choir_member_attendee_path(current_user.id, @choir.id, choir_member_attendee.choir_member_id, choir_member_attendee.id), class: "test att-option-div-absent" , id: "#{choir_member_attendee.id}", method: "patch" %>
+				<%= link_to "<i class='fa fa-times fa-lg'></i>".html_safe, edit_user_choir_choir_member_attendee_path(current_user.id, @choir.id, choir_member_attendee.choir_member_id, choir_member_attendee.id), class: "test att-option-div-absent" , id: "#{choir_member_attendee.id}" %>
 
-				<%= link_to "<i class='fa fa-clock-o fa-lg'></i>".html_safe, user_choir_choir_member_attendee_path(current_user.id, @choir.id, choir_member_attendee.choir_member_id, choir_member_attendee.id), class: "test att-option-div-late" , id: "#{choir_member_attendee.id}", method: "patch" %>
+				<%= link_to "<i class='fa fa-clock-o fa-lg'></i>".html_safe, edit_user_choir_choir_member_attendee_path(current_user.id, @choir.id, choir_member_attendee.choir_member_id, choir_member_attendee.id), class: "test att-option-div-late" , id: "#{choir_member_attendee.id}" %>
 
-				<%= link_to "<i class='fa fa-check fa-lg'></i></a>".html_safe, user_choir_choir_member_attendee_path(current_user.id, @choir.id, choir_member_attendee.choir_member_id, choir_member_attendee.id), class: "test att-option-div" , id: "#{choir_member_attendee.id}", method: "patch" %>
+				<%= link_to "<i class='fa fa-check fa-lg'></i></a>".html_safe, edit_user_choir_choir_member_attendee_path(current_user.id, @choir.id, choir_member_attendee.choir_member_id, choir_member_attendee.id), class: "test att-option-div" , id: "#{choir_member_attendee.id}" %>
 			<%else%>
 				<%= member_marked_points(choir_member_attendee.points).html_safe %>
 			<%end%>
