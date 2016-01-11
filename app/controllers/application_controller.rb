@@ -17,9 +17,9 @@ class ApplicationController < ActionController::Base
   end
 
   def member_marked_points(points)
-    points_hash = {0 => "<i class='fa fa-times fa-lg' style='float: right; margin-right:1em;'></i>", 
-                   2 => "<i class='fa fa-clock-o fa-lg' style='float: right; margin-right:1em;'></i>",
-                   3 => "<i class='fa fa-check fa-lg' style='float: right; margin-right:1em;'></i></a>"}
+    points_hash = {0 => "<i class='att-option-div-absent fa fa-times fa-lg' style='float: right; margin-right:.5em; padding:.3em;'></i>", 
+                   2 => "<i class='att-option-div-late fa fa-clock-o fa-lg' style='float: right; margin-right:.5em; padding:.3em;'></i>",
+                   3 => "<i class='att-option-div fa fa-check fa-lg' style='float: right; margin-right:.5em; padding:.3em;'></i></a>"}
     points_hash[points.to_i]
   end
 
