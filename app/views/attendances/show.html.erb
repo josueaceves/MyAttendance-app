@@ -1,7 +1,7 @@
 <h2 class="choir-attendance-index-header">Members Attendance</h2>
 <% @members_attendees.each do |choir_member_attendee| %>
 	<div class="row" id="<%= choir_member_attendee.id%>">
-		<div class="small-6 small-centered columns">
+		<div class="center-div small-6 small-centered columns">
 	    <div class="columns choir-attendance-index">
 	     	<%= find_choir_member(choir_member_attendee.choir_member_id).first_name %> <%= find_choir_member(choir_member_attendee.choir_member_id).last_name %> 
 
