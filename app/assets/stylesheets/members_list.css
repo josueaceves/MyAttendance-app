@@ -1,0 +1,33 @@
+.choir-member-index {
+  background-color: #E7E7E7;
+  font-family:Verdana, Geneva, sans-serif;
+  margin: .5em;
+  padding: .3em;
+  text-align: center;
+  border-radius: 5px;
+  color:  #10A7E5;
+  height: 2em;
+  width: 90%
+}
+
+.choir-member-index-header {
+  font-weight: bold;
+  font-family: cursive;
+  color: #FE7040;
+}
+
+.attendance-button  {
+  background-color: #DDDDDD;
+  float: right;
+  margin-right: 2em;
+  border-radius: 3px;
+  box-shadow: 10px 10px 10px 5px #888888;
+
+}
+.attendance-button a {
+  text-align: center;
+  color: rgba(59, 174, 22, 0.7);
+  font-weight: bold;
+  
+
+}

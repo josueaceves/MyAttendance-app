@@ -11,13 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208170323) do
+ActiveRecord::Schema.define(version: 20151222231043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "attendances", force: :cascade do |t|
+    t.integer  "choir_id"
+    t.string   "prayer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "attendees", force: :cascade do |t|
+    t.integer  "attendance_id"
+    t.integer  "choir_member_id"
+    t.integer  "points"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "choir_members", force: :cascade do |t|
+    t.string   "first_name", null: false
+    t.string   "last_name",  null: false
+    t.string   "voice",      null: false
+    t.string   "side",       null: false
+    t.integer  "choir_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "choirs", force: :cascade do |t|
-    t.string   "choir_name"
+    t.string   "choir_name",     null: false
     t.string   "choir_location"
     t.integer  "user_id"
     t.datetime "created_at",     null: false
@@ -25,10 +50,10 @@ ActiveRecord::Schema.define(version: 20151208170323) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "password_digest"
+    t.string   "first_name",      null: false
+    t.string   "last_name",       null: false
+    t.string   "email",           null: false
+    t.string   "password_digest", null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

@@ -1,29 +1,11 @@
 <p id="notice"><%= notice %></p>
+<h2 class="choir-list-index-header">List Of Choirs</h2>
+<div class="row">
+	<div class="medium-5 medium-centered columns  columns choir-list-index">
+	  <% @choirs.each do |choir| %>
+	    Choir Name: <%= link_to choir.choir_name, user_choir_choir_members_path(current_user, choir) %>
+	  <% end %>
+	</div>
+</div>
 
-<h1>Listing Choirs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Choir name</th>
-      <th>Choir location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @choirs.each do |choir| %>
-      <tr>
-        <td><%= choir.choir_name %></td>
-        <td><%= choir.choir_location %></td>
-        <td><%= link_to 'Show', choir %></td>
-        <td><%= link_to 'Edit', edit_choir_path(choir) %></td>
-        <td><%= link_to 'Destroy', choir, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Choir', new_choir_path %>

@@ -1,0 +1,33 @@
+<%= form_tag new_user_choir_choir_member_path(current_user, current_choir) do |f| %>
+  <% if @choir_member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@choir_member.errors.count, "error") %> prohibited this choir_member from being saved:</h2>
+
+      <ul>
+      <% @choir_member.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= label_tag :first_name %><br>
+    <%= text_field_tag :first_name %>
+  </div>
+  <div class="field">
+    <%= label_tag :last_name %><br>
+    <%= text_field_tag :last_name %>
+  </div>
+  <div class="field">
+    <%= label_tag :voice %><br>
+    <%= text_field_tag :voice %>
+  </div>
+  <div class="field">
+    <%= label_tag :side %><br>
+    <%= text_field_tag :side %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Create" %>
+  </div>
+<% end %>

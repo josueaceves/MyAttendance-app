@@ -1,0 +1,4 @@
+
+<% @attendances. each do |att| %>
+	<p><%= att.created_at.strftime("%a, %-d %b '%y")%></p>
+<% end %>

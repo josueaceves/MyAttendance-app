@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+
+  <div class="medium-2 columns attendance-button" align="right">
+    <h3><%= link_to "History", user_choir_attendances_path(current_user.id, @choir.id)%></h3>
+  </div>
+
+  <div class="medium-2 columns attendance-button" align="right">
+    <h3><%= link_to "Attendance",user_choir_attendances_path(current_user.id, @choir.id), method: "post" %></h3>
+  </div>
+
+
+</div>
+<div class="large-6 large-centered columns">
+  <div class="row" >
+    <h2 class="choir-member-index-header">Members</h2>
+    <% @choir_members.each do |choir_member| %>
+      <div class="row">
+        <div class="small-9  choir-member-index ">
+          <a href="/users/<%= current_user.id %>/choirs/<%= @choir.id%>/choir_members/<%= choir_member.id%>"><%= choir_member.first_name %> <%= choir_member.last_name %> | <%= choir_member.voice %></a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
